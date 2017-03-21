@@ -8,6 +8,7 @@ RUN \
        gem install norikra --no-ri --no-rdoc \
     && apk add --no-cache --virtual .jolokia-deps \
             curl \
+    && mkdir -p /opt/jolokia/ \
     && curl -fSL https://repo1.maven.org/maven2/org/jolokia/jolokia-jvm/${JOLOKIA_VERSION}/jolokia-jvm-${JOLOKIA_VERSION}-agent.jar \
         -o /opt/jolokia/jolokia-jvm-agent.jar \
     && apk del .jolokia-deps
