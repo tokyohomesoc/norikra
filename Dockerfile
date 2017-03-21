@@ -6,7 +6,7 @@ ARG JOLOKIA_VERSION=1.3.5
 
 RUN \
        gem install norikra --no-ri --no-rdoc \
-    && apk add --no-cache -virtual .jolokia-deps \
+    && apk add --no-cache --virtual .jolokia-deps \
             curl \
     && curl -fSL https://repo1.maven.org/maven2/org/jolokia/jolokia-jvm/${JOLOKIA_VERSION}/jolokia-jvm-${JOLOKIA_VERSION}-agent.jar \
         -o /opt/jolokia/jolokia-jvm-agent.jar \
