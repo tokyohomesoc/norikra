@@ -15,5 +15,5 @@ RUN \
 
 EXPOSE 26571/tcp 26578/tcp 8778/tcp
 VOLUME /var/norikra
-ENTRYPOINT ["norikra", "start", "-javaagent:/opt/jolokia/jolokia-jvm-agent.jar=port=8778,host=0.0.0.0"]
+ENTRYPOINT ["norikra", "start", "-javaagent:/opt/jolokia/jolokia-jvm-agent.jar=port=8778,host=0.0.0.0", "-Xms256m", "-Xmx256m"]
 CMD ["--stats=/var/norikra/stats.json", "--dump-stat-interval=60"]
